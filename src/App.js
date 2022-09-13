@@ -27,6 +27,7 @@ function App() {
           )}
           data={product_data}
           renderItem={({item}) => <NewsCard news={item} />}
+          numColumns={2}
         />
       </View>
     </SafeAreaView>
