@@ -1,52 +1,18 @@
 import React from 'react';
-import {Dimensions} from 'react-native';
-
-import {
-  SafeAreaView,
-  View,
-  StyleSheet,
-  FlatList,
-  TextInput,
-} from 'react-native';
-import product_data from './components/NewsCard/product-data.json';
-import NewsCard from './components/NewsCard/NewsCard';
-
+import {SafeAreaView, View, StyleSheet} from 'react-native';
+import Todo from './components/todoList/todo';
 function App() {
-  const [text, onChangeText] = React.useState('Ara...');
-
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <FlatList
-          ListHeaderComponent={() => (
-            <TextInput
-              style={styles.input}
-              onChangeText={onChangeText}
-              value={text}
-            />
-          )}
-          data={product_data}
-          renderItem={({item}) => <NewsCard news={item} />}
-          numColumns={2}
-        />
-      </View>
+      <Todo />
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#142423',
     flex: 1,
-    backgroundColor: 'white',
-    margin: 10,
-    flexDirection: 'row',
-  },
-  input: {
-    backgroundColor: '#eceff1',
-    borderRadius: 10,
-    margin: 10,
-    width: Dimensions.get('window').width,
   },
 });
-
 export default App;
